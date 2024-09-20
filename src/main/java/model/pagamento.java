@@ -1,9 +1,19 @@
 package model;
 
+import jakarta.persistence.*;
+
 import java.util.Date;
 
+@Entity
+@Table(name = "tb_pagamento")
 public class pagamento {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Column(name = "data_pagamento")
+    private Date data;
+    @Column(name = "Valor_pagamento")
+    private float valor;
 
     @Override
     public String toString() {
@@ -38,7 +48,6 @@ public class pagamento {
         this.valor = valor;
     }
 
-    private Date data;
-    private float valor;
+
 
 }
